@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React, { useEffect } from "react";
+import NavBar from "./components/navigation/NavBar";
+import Home from "./components/static/Home";
 function App() {
+  
+  useEffect(() => {
+    fetch("https://botw-compendium.herokuapp.com/api/v2.")
+    .then(r => r.json())
+    .then(data => console.log(data.data))
+  }, [])
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavBar />
+      <Home />
+      <h1>Hyrule Compendium</h1>
     </div>
   );
 }
