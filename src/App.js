@@ -17,14 +17,13 @@ function App() {
     <div className="App">
       <NavBar />
       <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/monsters" element={<ListMonsters monsters={monsters} />} />
-      <Route path="/monster/monsterPage" element={<MonsterCard />} />
-
+        <Route path="/" element={<Home />} />
+        <Route path="/monsters" element={<ListMonsters monsters={monsters} />} />
+        <Route path="/monster/monsterPage" element={<MonsterCard />} />
       </Routes>
-      <h1>Hyrule Compendium</h1>
     </div>
   );
 }
 
 export default App;
+
