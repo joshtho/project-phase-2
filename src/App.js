@@ -3,6 +3,7 @@ import NavBar from "./components/navigation/NavBar";
 import Home from "./components/static/Home";
 import {Routes, Route} from "react-router-dom"
 import ListMonsters from "./components/monsters/ListMonsters";
+import MonsterCard from "./components/monsters/MonsterCard";
 function App() {
   const [monsters, setMonsters] = useState([])
 
@@ -18,7 +19,7 @@ function App() {
       <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/monsters" element={<ListMonsters monsters={monsters} />} />
-      {/* <Route path="/" element={<Home />} /> */}
+      <Route path="/monster/monsterPage" element={<MonsterCard />} />
 
       </Routes>
       <h1>Hyrule Compendium</h1>
