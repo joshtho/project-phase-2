@@ -14,13 +14,15 @@ function App() {
     .then(data => setMonsters(data.data.monsters))
   }, [])
 
+  const sortedMonsters = monsters.sort(function(a, b){return a.id - b.id})
+
   return (
     <div className="App">
       <Router>
         <NavBar />
         <Routes>
-          <Route path="monsters/*" element={<ListMonsters monsters={monsters} />} />
-            <Route path="monsters/:id" element={<MonsterPage monster={monsters} /> } />
+          <Route path="monsters/*" element={<ListMonsters monsters={sortedMonsters}  />} />
+            <Route path="monsters/:id" element={<MonsterPage monsters={sortedMonsters}  /> } />
           <Route />
           <Route path="/*" element={<Home />} />
         </Routes>

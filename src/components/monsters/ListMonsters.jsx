@@ -17,14 +17,12 @@ const useStyles = makeStyles((theme) => ({
 const ListMonsters = ({monsters}) => {
   const classes = useStyles();
 
-  const sortedMonsters = monsters.sort(function(a, b){
-    return a.id - b.id
-  });
+
 
   const navigate = useNavigate()
   
   const displayMonsters = 
-   sortedMonsters.map(monster => (
+   monsters.map(monster => (
     <ListItem button onClick={() => {navigate(`/monsters/${monster.id}`)}} key={monster.id} >
           <ListItemText primary={monster.name} />
     </ListItem>
