@@ -5,6 +5,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import {Link} from "react-router-dom"
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -27,8 +28,7 @@ export default function NavBar() {
           <Typography variant="h6" className={classes.title}>
           <Button color="inherit" component={Link} to="/" >Hyrule Monsters</Button>
           </Typography>
-          <Button color="inherit" component={Link} to="/monsters" >Monster List</Button>
-          {/* <Button color="inherit" component={Link} to="/monsters/favorites" >Favorite Monster's List</Button> */}
+          <Button color="inherit" component={Link} to="monsters" >Monster List</Button>
         </Toolbar>
       </AppBar>
     </div>

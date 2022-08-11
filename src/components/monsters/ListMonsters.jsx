@@ -3,8 +3,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-import { Link } from 'react-router-dom';
-import MonsterCard from './MonsterCard'
+import { useNavigate } from 'react-router-dom';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -14,30 +14,28 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-
-
-
 const ListMonsters = ({monsters}) => {
   const classes = useStyles();
 
-  
-  
-  
   const sortedMonsters = monsters.sort(function(a, b){
     return a.id - b.id
   });
 
-  const displayMonsters = sortedMonsters.map(monster => (
-    <ListItem button component={Link} to='/MonsterCard' >
+  const navigate = useNavigate()
+  
+  const displayMonsters = 
+   sortedMonsters.map(monster => (
+    <ListItem button onClick={() => {navigate(`/monsters/${monster.id}`)}} key={monster.id} >
           <ListItemText primary={monster.name} />
     </ListItem>
-  ))
-  
+   ))
+
+
   
   return (
     <div className={classes.root} >
       <h1>Monster List</h1>
-      <List component="nav" aria-label="secondary mailbox folders">
+      <List component="nav" aria-label="list of monsters">
       {displayMonsters}
       </List>
     </div>
