@@ -1,0 +1,21 @@
+{
+    "comments": [
+        {
+            "id" : 1,
+            "name": "Chuchu",
+            "comment": "These guys are annoying"
+        },
+        
+        {
+            "id" : 2,
+            "name": "Chuchu",
+            "comment": "These guys are weak"
+        },
+
+        {
+            "id" : 3,
+            "name": "Fire chuchu",
+            "comment": "These guys are annoying and weak, with fire"
+        }
+    ]
+}
