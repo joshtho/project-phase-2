@@ -1,10 +1,10 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
+import CommentForm from '../comments/CommentForm'
 
 const MonsterPage = ({monsters, capitalizeFirstLetter}) => {
   const params = useParams()
   const monsterObj = monsters[params.id - 84 ]
-  console.log(monsters)
   console.log(monsterObj)
   
   const displayLocations = monsterObj.common_locations ? monsterObj.common_locations.map(location => (
@@ -28,6 +28,7 @@ const MonsterPage = ({monsters, capitalizeFirstLetter}) => {
       <h5>Drops</h5>
       {displayDrops}
       </ul>
+      <CommentForm />
     </div>
   )
 }
