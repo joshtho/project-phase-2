@@ -14,17 +14,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const ListMonsters = ({monsters}) => {
+const ListMonsters = ({monsters, capitalizeFirstLetter}) => {
   const classes = useStyles();
-
-
-
   const navigate = useNavigate()
-  
+
+
   const displayMonsters = 
    monsters.map(monster => (
     <ListItem button onClick={() => {navigate(`/monsters/${monster.id}`)}} key={monster.id} >
-          <ListItemText primary={monster.name} />
+          <ListItemText primary={capitalizeFirstLetter(monster.name)} />
     </ListItem>
    ))
 
