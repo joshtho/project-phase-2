@@ -30,7 +30,7 @@ const MonsterPage = ({monsters, capitalizeFirstLetter}) => {
       {displayDrops}
       </ul>
       <DisplayComments clickedMonster={monsterObj.name} />
-      <CommentForm />
+      <CommentForm clickedMonster={monsterObj.name}/>
     </div>
   )
 }
