@@ -1,6 +1,7 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import CommentForm from '../comments/CommentForm'
+import DisplayComments from '../comments/DisplayComments'
 
 const MonsterPage = ({monsters, capitalizeFirstLetter}) => {
   const params = useParams()
@@ -28,6 +29,7 @@ const MonsterPage = ({monsters, capitalizeFirstLetter}) => {
       <h5>Drops</h5>
       {displayDrops}
       </ul>
+      <DisplayComments />
       <CommentForm />
     </div>
   )
