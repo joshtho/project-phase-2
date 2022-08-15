@@ -1,12 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import CommentForm from '../comments/CommentForm'
 import DisplayComments from '../comments/DisplayComments'
+import { useEffect } from 'react'
 
 const MonsterPage = ({monsters, capitalizeFirstLetter}) => {
+  const [comments, setComments] = useState([])
   const params = useParams()
   const monsterObj = monsters[params.id - 84 ]
-  console.log(monsterObj)
+    
+  useEffect(() => {
+        fetch('http://localhost:3001/comments')
+        .then(r => r.json())
+        .then(data => setComments(data))
+    }, [])
+
   
   const displayLocations = monsterObj.common_locations ? monsterObj.common_locations.map(location => (
     <li key={location}>{location}</li> 
@@ -29,8 +37,12 @@ const MonsterPage = ({monsters, capitalizeFirstLetter}) => {
       <h5>Drops</h5>
       {displayDrops}
       </ul>
-      <DisplayComments clickedMonster={monsterObj.name} />
-      <CommentForm clickedMonster={monsterObj.name}/>
+      <DisplayComments clickedMonster={monsterObj.name} comments={comments} />
+      <CommentForm 
+      clickedMonster={monsterObj.name} 
+      setComments={setComments}
+      comments={comments} 
+      />
     </div>
   )
 }

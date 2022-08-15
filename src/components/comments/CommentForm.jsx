@@ -1,7 +1,11 @@
+
 import React, { useState } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
 
-const CommentForm = ({clickedMonster}) => {
-
+const CommentForm = ({clickedMonster, comments, setComments}) => {
+const params = useParams() 
+console.log(params)
+const navigate = useNavigate()
 const [newCommentData, setNewCommentData] =  useState({
     name: clickedMonster,
     username: '',
@@ -19,9 +23,12 @@ function handleSubmit(e) {
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(newCommentData)
     })
+    .then(r => r.json())
+    .then(data => setComments([...comments, data]))
+    navigate(`/monsters/${params.id}`)
+
 }
 
-console.log(newCommentData)
 return (
     <form onSubmit={handleSubmit}>
         <h3>Write comment here</h3>
