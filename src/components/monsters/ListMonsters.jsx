@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -16,12 +16,12 @@ const useStyles = makeStyles((theme) => ({
 
 const ListMonsters = ({monsters, capitalizeFirstLetter}) => {
   const classes = useStyles();
-  const navigate = useNavigate()
+
 
 
   const displayMonsters = 
    monsters.map(monster => (
-    <ListItem button onClick={() => {navigate(`/monsters/${monster.id}`)}} key={monster.id} >
+    <ListItem button component={Link} to={`${monster.id}`} key={monster.id} >
           <ListItemText primary={capitalizeFirstLetter(monster.name)} />
     </ListItem>
    ))

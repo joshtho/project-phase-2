@@ -27,8 +27,8 @@ function App() {
       <Router>
         <NavBar />
         <Routes>
-          <Route path="monsters/" element={<ListMonsters monsters={sortedMonsters} capitalizeFirstLetter={capitalizeFirstLetter} />} />
-            <Route path="monsters/:id" element={<MonsterPage monsters={sortedMonsters} capitalizeFirstLetter={capitalizeFirstLetter} /> } />
+          <Route path="/monsters" element={<ListMonsters monsters={sortedMonsters} capitalizeFirstLetter={capitalizeFirstLetter} />} />
+            <Route path="/monsters/:id" element={<MonsterPage monsters={sortedMonsters} capitalizeFirstLetter={capitalizeFirstLetter} /> } />
           <Route />
           <Route path="/" element={<Home />} />
         </Routes>

@@ -14,7 +14,7 @@ const MonsterPage = ({monsters, capitalizeFirstLetter}) => {
         .then(r => r.json())
         .then(data => setComments(data))
     }, [])
-
+  
   
   const displayLocations = monsterObj.common_locations ? monsterObj.common_locations.map(location => (
     <li key={location}>{location}</li> 
