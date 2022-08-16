@@ -23,7 +23,7 @@ function NavBar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="static" >
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
           <Button color="inherit" component={Link} to="/" >Hyrule Monsters</Button>

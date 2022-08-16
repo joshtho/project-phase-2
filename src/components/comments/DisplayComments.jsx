@@ -2,8 +2,6 @@ import React from 'react'
 
 
 const DisplayComments = ({clickedMonster, comments}) => {
-
-   
     const renderComment = comments.filter(monster => monster.name === clickedMonster).map(comment => (
         <li key={comment.id}>{comment.username}: {comment.comment}</li>
     ))

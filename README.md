@@ -1,3 +1,18 @@
+# Legend of Zelda Breath of the Wild Beastiary
+
+Legend of Zelda Breath of the Wild Beastiary is a website for finding information and commenting on different monsters that reside in the Nintendo Switch Game: The Legend of Zelda Breath of the Wild. 
+
+## Installation
+
+Make sure to install json-server
+
+
+## Usage
+
+* Fork and clone
+* Install packages with npm or yarn install
+* Run development server with yarn start
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +83,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+

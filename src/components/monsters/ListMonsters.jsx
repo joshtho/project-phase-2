@@ -5,7 +5,6 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import { Link } from 'react-router-dom';
 
-
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
@@ -17,25 +16,20 @@ const useStyles = makeStyles((theme) => ({
 const ListMonsters = ({monsters, capitalizeFirstLetter}) => {
   const classes = useStyles();
 
-
-
-  const displayMonsters = 
-   monsters.map(monster => (
+  const displayMonsters = monsters.map(monster => (
     <ListItem button component={Link} to={`${monster.id}`} key={monster.id} >
           <ListItemText primary={capitalizeFirstLetter(monster.name)} />
     </ListItem>
    ))
 
-
-  
-  return (
-    <div className={classes.root} >
-      <h1>Monster List</h1>
-      <List component="nav" aria-label="list of monsters">
-      {displayMonsters}
-      </List>
-    </div>
-  )
-}
-
-export default ListMonsters
+   return (
+     <div className={classes.root} >
+       <h1>Monster List</h1>
+       <List component="nav" aria-label="list of monsters">
+       {displayMonsters}
+       </List>
+     </div>
+   )
+ }
+ 
+ export default ListMonsters;

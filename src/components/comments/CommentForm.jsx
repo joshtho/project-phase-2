@@ -25,7 +25,6 @@ function handleSubmit(e) {
     .then(r => r.json())
     .then(data => setComments([...comments, data]))
     navigate(``)
-
 }
 
 return (
@@ -41,10 +40,7 @@ return (
         <br/>
         <button>Submit</button>
     </form>
-    
     )
 }
-  
-  
-
+    
 export default CommentForm

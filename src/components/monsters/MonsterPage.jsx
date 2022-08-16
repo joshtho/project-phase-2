@@ -7,8 +7,9 @@ import { useEffect } from 'react'
 const MonsterPage = ({monsters, capitalizeFirstLetter}) => {
   const [comments, setComments] = useState([])
   const params = useParams()
-  const monsterObj = monsters[params.id - 84 ]
-    
+  const monsterObj = monsters.find(monster => monster.id === parseInt(params.id)) 
+
+      console.log("Object",monsterObj)
   useEffect(() => {
         fetch('http://localhost:3001/comments')
         .then(r => r.json())
@@ -27,22 +28,28 @@ const MonsterPage = ({monsters, capitalizeFirstLetter}) => {
 
   return (
     <div className='card'>
-      <h1>Monster page</h1>
-      <h1>{capitalizeFirstLetter(monsterObj.name)}</h1>
-      <img alt={monsterObj.name} src={monsterObj.image} />
-      <h4>{monsterObj.description}</h4>
-      <ul>
-      <h5>Common Locations</h5>
-        {displayLocations}
-      <h5>Drops</h5>
-      {displayDrops}
-      </ul>
-      <DisplayComments clickedMonster={monsterObj.name} comments={comments} />
-      <CommentForm 
-      clickedMonster={monsterObj.name} 
-      setComments={setComments}
-      comments={comments} 
-      />
+
+      {monsterObj ? 
+      <div>
+        <h1>Monster page</h1>
+        <h1>{capitalizeFirstLetter(monsterObj.name)}</h1>
+        <img alt={monsterObj.name} src={monsterObj.image} />
+        <h4>{monsterObj.description}</h4>
+        <ul>
+        <h5>Common Locations</h5>
+          {displayLocations}
+        <h5>Drops</h5>
+        {displayDrops}
+        </ul>
+        <DisplayComments clickedMonster={monsterObj.name} comments={comments} />
+        <CommentForm 
+        clickedMonster={monsterObj.name} 
+        setComments={setComments}
+        comments={comments} 
+        />
+      </div>
+        : <h1>Loading</h1>}
+
     </div>
   )
 }

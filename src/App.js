@@ -7,18 +7,15 @@ import ListMonsters from "./components/monsters/ListMonsters";
 
 function App() {
   const [monsters, setMonsters] = useState([])
-
+  const sortedMonsters = monsters.sort(function(a, b){return a.id - b.id})
   useEffect(() => {
     fetch("https://botw-compendium.herokuapp.com/api/v2")
     .then(r => r.json())
     .then(data => setMonsters(data.data.monsters))
   }, [])
 
-  const sortedMonsters = monsters.sort(function(a, b){return a.id - b.id})
-  
   function capitalizeFirstLetter(str) {
     const capitalized = str.charAt(0).toUpperCase() + str.slice(1);
-
     return capitalized;
   }
   
