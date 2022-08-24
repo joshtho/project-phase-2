@@ -22,13 +22,16 @@ console.log(params)
     monsterObj.common_locations ? monsterObj.common_locations.map(location => (
       <li key={location}>{location}</li> 
     )) : "Location varies"
+    )
  
 
-  )
 
-  // const displayDrops = monsterObj.drops ? monsterObj.drops.map(drop => (
-  //   <li key={drop}>{drop}</li>
-  // )) : "No common drops"
+  const displayDrops = () => (
+    monsterObj.drops ? monsterObj.drops.map(drop => (
+      <li key={drop}>{drop}</li>
+    )) : "No common drops"
+    ) 
+
   
   
   return (
@@ -46,6 +49,7 @@ console.log(params)
           <li key={location}>{location}</li>
         )) : "Location varies" } */}
         <h5>Drops</h5>
+        {displayDrops()}
         {/* {monsterObj.drops ? monsterObj.drops.map(drop => (
           <li key={drop}>{drop}</li>
         )) : "No Common drops"} */}
