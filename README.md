@@ -11,7 +11,7 @@ Make sure to install json-server
 
 * Fork and clone
 * Install packages with npm or yarn install
-* Run development server with yarn start
+* Run development server with npm or yarn start
 
 # Getting Started with Create React App
 
