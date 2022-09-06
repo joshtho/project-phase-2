@@ -45,14 +45,8 @@ console.log(params)
         <ul>
         <h5>Common Locations</h5>
         {displayLocations()}
-        {/* {monsterObj.common_locations ? monsterObj.common_locations.map(location => (
-          <li key={location}>{location}</li>
-        )) : "Location varies" } */}
         <h5>Drops</h5>
         {displayDrops()}
-        {/* {monsterObj.drops ? monsterObj.drops.map(drop => (
-          <li key={drop}>{drop}</li>
-        )) : "No Common drops"} */}
         </ul>
         <DisplayComments clickedMonster={monsterObj.name} comments={comments} />
         <CommentForm 
