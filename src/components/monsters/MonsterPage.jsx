@@ -8,8 +8,7 @@ const MonsterPage = ({monsters, capitalizeFirstLetter}) => {
   const [comments, setComments] = useState([])
   const params = useParams()
   const monsterObj = monsters.find(monster => monster.id === parseInt(params.id)) 
-console.log(monsters)
-console.log(params)
+
       console.log("Object",monsterObj)
   useEffect(() => {
         fetch('http://localhost:3001/comments')
