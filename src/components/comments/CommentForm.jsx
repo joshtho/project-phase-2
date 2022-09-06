@@ -29,7 +29,7 @@ function handleSubmit(e) {
 
 return (
     <form onSubmit={handleSubmit}>
-        <h3>Write comment here</h3>
+        <h3>What do you think of this Monster?</h3>
         <label>Username:</label>
         <br/>
         <input type='text' name="username" value={newCommentData.username} onChange={handleChange} />

@@ -9,7 +9,7 @@ const MonsterPage = ({monsters, capitalizeFirstLetter}) => {
   const monsterObj = monsters.find(monster => monster.id === parseInt(params.id)) 
 
   useEffect(() => {
-        fetch('http://localhost:3001/comments')
+        fetch('http://localhost:3000/comments')
         .then(r => r.json())
         .then(data => setComments(data))
     }, [])
