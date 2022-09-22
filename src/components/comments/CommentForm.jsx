@@ -17,7 +17,7 @@ function handleChange(e) {
 
 function handleSubmit(e) {
     e.preventDefault()
-    fetch("http://localhost:3001/comments", {
+    fetch("http://localhost:3000/comments", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(newCommentData)

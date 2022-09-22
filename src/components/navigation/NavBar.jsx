@@ -23,12 +23,14 @@ function NavBar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" >
+      <AppBar position="static" id='box'>
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
-          <Button color="inherit" component={Link} to="/" >Hyrule Monsters</Button>
+            <Button id='listName' color="inherit" component={Link} to="/" className="icon" >Home</Button>
           </Typography>
-          <Button color="inherit" component={Link} to="monsters" >Monster List</Button>
+          <Button id='listName' color="inherit" component={Link} to="monsters" >Monsters</Button>
+          <Button id='listName' color="inherit" component={Link} to="weapons" >Weapons</Button>
+          <Button id='listName' color="inherit" component={Link} to="consumables" >Consumables</Button>
         </Toolbar>
       </AppBar>
     </div>

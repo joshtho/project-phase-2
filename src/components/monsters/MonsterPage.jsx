@@ -16,22 +16,22 @@ const MonsterPage = ({monsters, capitalizeFirstLetter}) => {
   
   const displayLocations = () => (
     monsterObj.common_locations ? monsterObj.common_locations.map(location => (
-      <li key={location}>{location}</li> 
+      <li id='smallList' key={location}>{location}</li> 
     )) : "Location varies"
   )
   
   const displayDrops = () => (
     monsterObj.drops ? monsterObj.drops.map(drop => (
-      <li key={drop}>{drop}</li>
+      <li id='smallList' key={drop}>{drop}</li>
    )) : "No common drops"
   ) 
   
   return (
     <div className='card'>
       {monsterObj ? 
-      <div>
+      <div className='center'>
         <h2>{capitalizeFirstLetter(monsterObj.name)}</h2>
-        <img alt={monsterObj.name} src={monsterObj.image} />
+        <img alt={monsterObj.name} src={monsterObj.image} className='centerImg' />
         <h4>{monsterObj.description}</h4>
         <ul>
         <h5>Common Locations</h5>
