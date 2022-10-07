@@ -22,22 +22,10 @@ function WeaponsPage({weapons, capitalizeFirstLetter}) {
         <h3>Defense : {weaponsObj.defense}</h3>
         <h5>Common Locations</h5>
         {displayLocations()}
-        {/* <ul>
-        <h5>Drops</h5>
-        {displayDrops()}
-        </ul>
-        <DisplayComments clickedMonster={monsterObj.name} comments={comments} />
-        <CommentForm 
-        clickedMonster={monsterObj.name} 
-        setComments={setComments}
-        comments={comments}  */}
-        {/* /> */}
       </div> : 
       <h1>Loading...</h1>
       }
     </div>
-    // want to do a drag and droplist with selections of each food and its despcription 
-    // drop it into the pot and make whatever the actual dish is 
   )
 }
 
